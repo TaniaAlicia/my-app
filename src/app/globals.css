@@ -26,12 +26,23 @@ body {
 }
 
 @layer components {
+
+  main{
+    @apply w-full flex justify-center flex-col
+  }
+  h1{
+    font-family: var(--font-alegreya);
+    @apply font-bold text-xl
+  }
   
-  h1,h2,h3{
+  h2,h3{
     font-family: var(--font-alegreya);
     @apply font-semibold text-base
   }
     
+  section{
+    @apply px-4 w-full
+  }
     
 }
 

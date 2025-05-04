@@ -8,6 +8,7 @@ export const httpGetPublic = async <T>(endpoint: string, params?: URLSearchParam
         headers: {
             'Content-Type': 'application/json',
         },
+        cache: 'no-cache', 
     });
     if (!res.ok) {
         console.error(`Failed to fetch ${endpoint}: ${res.status} ${res.statusText}`); // Agrega más detalles del error
@@ -30,3 +31,4 @@ export const httpGet = async <T>(endpoint: string, params?: URLSearchParams): Pr
     }
     return res.json();
 }
+

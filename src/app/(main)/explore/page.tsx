@@ -1,8 +1,8 @@
 import ExploreTabs from '@/app/components/explore/ExploreTabs';
 import  exploreApi  from '@/services/explore/explore.service';
 
-const ExplorePage = async ({searchParams}: {[key:string]:string | undefined}) => {
-  const hashesPromise =  exploreApi.getTrendingHashtag(0, 3);
+const ExplorePage = async ({searchParams}: { searchParams: { type?: string } }) => {
+  const hashesPromise =  exploreApi.getTrendingHashtag(0, 5);
   const usersPromise = exploreApi.getFollowRecomendations(0, 4);
 
   const [hashes, users] = await Promise.all([hashesPromise, usersPromise]);
@@ -11,7 +11,7 @@ const ExplorePage = async ({searchParams}: {[key:string]:string | undefined}) =>
     <>
       <main className="flex flex-col bg-gray-100 p-8">
         <section className="flex flex-col mb-8"></section>
-        <ExploreTabs hashtags={hashes.content} users={users.content} initialTab={searchParams?.type} />
+        <ExploreTabs hashtags={hashes} users={users} initialTab={searchParams?.type} />
       </main>
     </>
   );

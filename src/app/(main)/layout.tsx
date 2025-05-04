@@ -3,6 +3,7 @@ import Menu from "../components/menu/Menu";
 import exploreApi from "../../services/explore/explore.service";
 import ExploreTrending from "../components/explore/ExploreTrending";
 import ExploreUsers from "../components/explore/ExploreUsers";
+import Link from "next/link";
 
 const LINKS = [
   { title: "Inicio", href: "/" },
@@ -27,10 +28,15 @@ const UsersLayout: FC<PropsWithChildren> = async ({ children }) => {
       </div>
       <main className="col-span-7">{children}</main>
       <div className="col-span-3 ">
-        <div className="mb-4 " >
+        <div className="mb-4 ">
           <ExploreTrending hashes={hashes.content} />
         </div>
-        <ExploreUsers users={users.content} />
+        <div className="mb-4 ">
+          <ExploreUsers users={users.content} />
+        </div>
+        <Link href="/faq">
+          <div className="link-primary">Preguntas frecuentes</div>
+        </Link>
       </div>
     </div>
   );

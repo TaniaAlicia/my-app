@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { Alegreya, Mulish } from "next/font/google";
+import Navbar from "./components/layout/Navbar";
 
 const alegreya = Alegreya({
   variable: "--font-alegreya",
@@ -25,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${mulish.variable} ${alegreya.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -8,6 +8,7 @@ export type PaginationType = {
 };
 
 export type PageType<T> = {
+  length: number;
   pagination: PaginationType;
   content: T[];
 };
