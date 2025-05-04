@@ -1,14 +1,26 @@
 type RepliesCounterProps = {
-    count: number 
-  }
-  
-  const RepliesCounter = ({count}: RepliesCounterProps) => {
-      const label =count > 1 ? "Respuestas" : "Respuesta"
+  count: number;
+  onClick?: () => void;
+};
+
+const RepliesCounter = ({ count, onClick }: RepliesCounterProps) => {
+  const className = "link-primary min-w-[160px] text-right";
+
+  if (count === 0) {
     return (
-      <div>
-          {count} {label}
+      <div className={className} onClick={onClick}>
+        Se el primero en responder
       </div>
-    )
+    );
   }
-  
-  export default RepliesCounter
+
+  const label = count > 1 ? "Respuestas" : "Respuesta";
+
+  return (
+    <div className={className} onClick={onClick}>
+      {count} {label}
+    </div>
+  );
+};
+
+export default RepliesCounter;

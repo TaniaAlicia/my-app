@@ -1,8 +1,16 @@
+'use client';
 
-const page = () => {
+import LoginForm from "../components/auth/LoginForm";
+
+const LoginPage = () => {
+ 
+
   return (
-    <div>Pagina de inicio</div>
-  )
-}
+    <div className="flex items-center w-full flex-col mt-10">
+      <h2 className="mb-2 text-xl font-semibold">Iniciar sesión en la red social</h2>
+      <LoginForm />
+    </div>
+  );
+};
 
-export default page
+export default LoginPage;

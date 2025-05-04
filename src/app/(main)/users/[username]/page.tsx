@@ -46,7 +46,7 @@ const UserPage = () => {
   if (!user) return <div>Error cargando el usuario</div>;
 
   return (
-    <main className="flex flex-col bg-gray-200 p-4">
+    <main className="flex flex-col bg-gray-200 p-4 rounded-lg shadow-md">
       <section className="flex flex-col items-center mb-8">
         <div className="rounded-full bg-gray-300 overflow-hidden block relative w-30 h-30 mb-2">
           <Image

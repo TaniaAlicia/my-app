@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images : {
-      domains: ['i.pinimg.com']
+      domains: ['i.blogs.es','i.pinimg.com']
   },
 
   async redirects() {

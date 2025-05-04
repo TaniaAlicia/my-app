@@ -8,7 +8,9 @@ import PostBox from "../components/utils/PostBox";
 
 import userApi from "../../services/users/users.service";
 
-const IndexPage = async () => {
+const IndexPage = async ({ params }: { params: { id: string } }) => {
+
+
   
 
   // Obtener los mensajes iniciales
@@ -21,17 +23,16 @@ const IndexPage = async () => {
       size: 10,
       first: true,
       last: true,
-    },
-    length: 0,
+    }
   };
 
   // Obtener la foto del usuario (puedes cambiar 'ObiWan' por un valor dinámico si lo prefieres)
   const photoUrl = await userApi.getUserPhoto("ObiWan");
 
   return (
-    <main className="flex flex-col bg-gray-100 p-8">
+    <main className="flex flex-col p-8 bg-gray-100 rounded-lg shadow-md">
       <section className="flex flex-col mb-8">
-        {photoUrl && <PostBox user={{ username: "ObiWan", photoUrl }} />}
+        {photoUrl && <PostBox parentId={params.id} />}
         <MessageFeed initialMessages={messageResponse} />
       </section>
     </main>

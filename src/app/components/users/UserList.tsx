@@ -24,7 +24,7 @@ const  UserList = ({initialUserPage}:UserListProps) => {
     
     const fetchData = async () => {
             const pageNumber = page.pagination.page + 1;
-            const response = await exploreApi.getFollowRecomendations(pageNumber,10)
+            const response = await exploreApi.getFollowRecomendations(pageNumber,5)
             if (response) {
                 setPage(response);
             }
@@ -35,7 +35,7 @@ const  UserList = ({initialUserPage}:UserListProps) => {
         }
     
         const refresh = async () => {
-            const response = await exploreApi.getFollowRecomendations(0, 10);
+            const response = await exploreApi.getFollowRecomendations(0, 5);
             if (response) {
                 setPage(response);
             }

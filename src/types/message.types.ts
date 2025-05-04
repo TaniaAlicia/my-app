@@ -7,6 +7,7 @@ message: string;
 }; */
 
 export interface MessageType {
+    id: string;
     user: UserType;
     message: string; // <-- asegúrate de que sea string
     repliesCount: number;
